@@ -1,0 +1,326 @@
+{
+  "pays": "Vietnam",
+  "drapeau": "🇻🇳",
+  "symbole": "🌸",
+  "titre": "Con Dao : L'Archipel Secret du Vietnam",
+  "budget": "3500€ - 4500€ par personne",
+  "duree": "12 jours uniquement",
+  "temps_vol": "Environ 18-22h (escales incluses)",
+  "jours": [
+    {
+      "jour": 1,
+      "symbole": "✈️",
+      "titre": "Départ de Paris",
+      "legende": "Votre aventure commence à l'aéroport de Paris, où vous embarquerez pour un long vol vers le Vietnam. Préparez-vous à traverser les fuseaux horaires et à vous immerger progressivement dans l'ambiance asiatique. Profitez du voyage pour vous reposer et anticiper les merveilles qui vous attendent.",
+      "lieu": "Paris - Ho Chi Minh Ville",
+      "activites": [
+        "✈️ <strong>Vol Paris - Ho Chi Minh Ville</strong>: Envolez-vous depuis Paris pour une nuit à bord, direction la vibrante Ho Chi Minh Ville, porte d'entrée vers les îles de Con Dao."
+      ],
+      "illustration": "jour1.jpg",
+      "encarts": [
+        {
+          "symbole": "ℹ️",
+          "titre": "Conseil de vol",
+          "texte": "Prévoyez un oreiller de voyage et des bouchons d'oreille pour maximiser votre confort durant ce long trajet."
+        }
+      ]
+    },
+    {
+      "jour": 2,
+      "symbole": "🛬",
+      "titre": "Arrivée à Con Dao",
+      "legende": "Après une escale à Ho Chi Minh Ville, un court vol vous mènera à l'archipel de Con Dao. L'atterrissage offre déjà des vues spectaculaires sur les eaux turquoise. Une fois installé, laissez-vous bercer par la douceur de vivre insulaire et profitez d'une première balade relaxante sur la plage.",
+      "lieu": "Con Dao",
+      "activites": [
+        "✈️ <strong>Vol Ho Chi Minh Ville - Con Dao</strong>: Prenez un vol intérieur pour rejoindre l'île paradisiaque de Con Dao, une transition rapide vers un havre de paix.",
+        "🛏️ <strong>Installation et détente</strong>: Installez-vous à votre hôtel et profitez de l'après-midi pour vous rafraîchir et vous détendre après le voyage.",
+        "🚶‍♀️ <strong>Balade sur la plage de Lo Voi</strong>: Faites une première promenade tranquille le long de la plage de Lo Voi, appréciant le sable fin et les premiers rayons du soleil tropical."
+      ],
+      "illustration": "jour2.jpg",
+      "encarts": [
+        {
+          "symbole": "💡",
+          "titre": "Transfert aéroport",
+          "texte": "L'aéroport de Con Dao (VCS) est petit. Des taxis ou navettes d'hôtel sont facilement disponibles pour rejoindre votre hébergement."
+        },
+        {
+          "symbole": "☀️",
+          "titre": "Protection solaire",
+          "texte": "Le soleil est intense à Con Dao, pensez à appliquer de la crème solaire dès le premier jour."
+        }
+      ]
+    },
+    {
+      "jour": 3,
+      "symbole": "🏞️",
+      "titre": "Nature et Histoire",
+      "legende": "Découvrez la richesse naturelle et le passé poignant de Con Dao. La matinée est dédiée à l'exploration du parc national, un écrin de biodiversité. L'après-midi, plongez dans l'histoire de l'île en visitant les vestiges de son passé colonial et carcéral, un contraste saisissant.",
+      "lieu": "Con Dao",
+      "activites": [
+        "🌳 <strong>Randonnée dans le Parc National de Con Dao</strong>: Explorez les sentiers luxuriants du parc, à la recherche de la faune endémique comme les écureuils géants noirs et les macaques.",
+        "🏛️ <strong>Visite des prisons de Con Dao</strong>: Imprégnez-vous de l'histoire de l'île en visitant les anciennes prisons, un témoignage émouvant du passé vietnamien."
+      ],
+      "illustration": "jour3.jpg",
+      "encarts": [
+        {
+          "symbole": "👟",
+          "titre": "Équipement",
+          "texte": "Prévoyez de bonnes chaussures de marche et de l'anti-moustique pour la randonnée dans le parc national."
+        },
+        {
+          "symbole": "💧",
+          "titre": "Hydratation",
+          "texte": "Il fait chaud et humide, emportez toujours une bouteille d'eau, surtout lors des visites."
+        }
+      ]
+    },
+    {
+      "jour": 4,
+      "symbole": "🐠",
+      "titre": "Exploration sous-marine",
+      "legende": "Aujourd'hui, l'océan vous appelle ! Embarquez pour une journée d'exploration des fonds marins exceptionnels de Con Dao. Que vous soyez adepte de la plongée ou du snorkeling, les récifs coralliens et la vie marine foisonnante vous laisseront des souvenirs impérissables. Un déjeuner pique-nique sur une île déserte complétera cette expérience.",
+      "lieu": "Con Dao (îles environnantes)",
+      "activites": [
+        "🚤 <strong>Excursion snorkeling/plongée à Hon Bay Canh</strong>: Partez en bateau vers l'île de Hon Bay Canh, réputée pour ses récifs coralliens intacts et ses tortues marines.",
+        "🏖️ <strong>Détente sur une plage isolée</strong>: Profitez d'un moment de farniente sur une plage immaculée, accessible uniquement par bateau, pour un déjeuner pique-nique."
+      ],
+      "illustration": "jour4.jpg",
+      "encarts": [
+        {
+          "symbole": "🐢",
+          "titre": "Observation des tortues",
+          "texte": "Entre mai et octobre, Hon Bay Canh est un site de ponte important pour les tortues vertes. Soyez respectueux de leur environnement."
+        },
+        {
+          "symbole": "⚠️",
+          "titre": "Sécurité en mer",
+          "texte": "Choisissez un opérateur de plongée ou de snorkeling réputé et vérifiez toujours les conditions météorologiques avant de partir."
+        }
+      ]
+    },
+    {
+      "jour": 5,
+      "symbole": "🛵",
+      "titre": "Découverte de l'île à votre rythme",
+      "legende": "Louez un scooter et partez à la découverte des recoins cachés de Con Dao. Explorez des plages secrètes, des points de vue panoramiques et des villages de pêcheurs authentiques. L'après-midi, offrez-vous un moment de détente bien mérité, peut-être avec un massage traditionnel vietnamien.",
+      "lieu": "Con Dao",
+      "activites": [
+        "🏍️ <strong>Exploration en scooter de l'île</strong>: Louez un scooter pour découvrir les plages isolées comme Bai Nhat ou les points de vue sur la côte.",
+        "💆‍♀️ <strong>Moment de détente et bien-être</strong>: Offrez-vous un massage relaxant dans l'un des spas de l'île, pour recharger vos batteries après l'exploration."
+      ],
+      "illustration": "jour5.jpg",
+      "encarts": [
+        {
+          "symbole": "🛵",
+          "titre": "Location de scooter",
+          "texte": "La location de scooter est le meilleur moyen de se déplacer. Assurez-vous d'avoir un permis international et de porter un casque."
+        },
+        {
+          "symbole": "🗺️",
+          "titre": "Orientation",
+          "texte": "L'île est petite, mais une carte ou une application GPS est utile pour trouver les plages moins fréquentées."
+        }
+      ]
+    },
+    {
+      "jour": 6,
+      "symbole": "🌅",
+      "titre": "Lever de soleil et saveurs locales",
+      "legende": "Commencez la journée par un lever de soleil spectaculaire sur la mer, un moment de pure sérénité. Ensuite, plongez dans l'ambiance du marché local, où les couleurs et les saveurs du Vietnam s'offrent à vous. L'après-midi est libre pour profiter de la plage ou d'une activité de votre choix.",
+      "lieu": "Con Dao",
+      "activites": [
+        "☀️ <strong>Lever de soleil à Mui Ca Map</strong>: Rendez-vous à Mui Ca Map (Cap du Requin) pour admirer un lever de soleil époustouflant sur l'océan.",
+        "🛍️ <strong>Visite du marché de Con Dao</strong>: Flânez dans le marché local pour découvrir les produits frais, les fruits exotiques et l'artisanat vietnamien."
+      ],
+      "illustration": "jour6.jpg",
+      "encarts": [
+        {
+          "symbole": "📸",
+          "titre": "Photographie",
+          "texte": "Le lever de soleil à Mui Ca Map offre des opportunités photographiques incroyables, n'oubliez pas votre appareil."
+        },
+        {
+          "symbole": "🍜",
+          "titre": "Gastronomie",
+          "texte": "Au marché, goûtez aux spécialités locales comme le 'Banh Xeo' (crêpe vietnamienne) ou les fruits de mer frais."
+        }
+      ]
+    },
+    {
+      "jour": 7,
+      "symbole": "🏝️",
+      "titre": "Journée plage et farniente",
+      "legende": "Aujourd'hui est une journée dédiée à la relaxation et au farniente. Choisissez votre plage préférée, installez-vous confortablement et laissez-vous bercer par le bruit des vagues. Profitez du soleil, nagez dans les eaux cristallines et savourez la tranquillité de l'île. Une pause parfaite pour recharger les batteries.",
+      "lieu": "Con Dao",
+      "activites": [
+        "🏖️ <strong>Détente à la plage de Dam Trau</strong>: Passez la journée sur la magnifique plage de Dam Trau, connue pour son sable doré et ses eaux calmes, idéale pour la baignade.",
+        "🍹 <strong>Cocktail au coucher du soleil</strong>: Terminez la journée par un cocktail rafraîchissant dans un bar de plage, en admirant le coucher de soleil sur l'horizon."
+      ],
+      "illustration": "jour7.jpg",
+      "encarts": [
+        {
+          "symbole": "⛱️",
+          "titre": "Services de plage",
+          "texte": "Certaines plages proposent des transats et des parasols à louer, ainsi que des petits restaurants pour le déjeuner."
+        },
+        {
+          "symbole": "📖",
+          "titre": "Lecture",
+          "texte": "C'est la journée idéale pour lire un bon livre sous les cocotiers, loin de toute agitation."
+        }
+      ]
+    },
+    {
+      "jour": 8,
+      "symbole": "🛶",
+      "titre": "Kayak et découverte des mangroves",
+      "legende": "Explorez un autre aspect de la nature de Con Dao en pagayant à travers les mangroves. Cette activité paisible vous permettra d'observer la faune locale dans un écosystème unique. L'après-midi, visitez le temple de Van Son Tu pour une touche de spiritualité et une vue imprenable sur la ville.",
+      "lieu": "Con Dao",
+      "activites": [
+        "🛶 <strong>Excursion en kayak dans les mangroves</strong>: Louez un kayak pour explorer les paisibles forêts de mangroves, un habitat vital pour de nombreuses espèces d'oiseaux et de poissons.",
+        "🙏 <strong>Visite du temple Van Son Tu</strong>: Montez jusqu'au temple Van Son Tu pour admirer son architecture sereine et profiter d'une vue panoramique sur la ville de Con Son et la baie."
+      ],
+      "illustration": "jour8.jpg",
+      "encarts": [
+        {
+          "symbole": "🌿",
+          "titre": "Écosystème",
+          "texte": "Les mangroves sont fragiles, veillez à ne pas déranger la faune et à ne laisser aucune trace de votre passage."
+        },
+        {
+          "symbole": "🧘‍♀️",
+          "titre": "Sérénité",
+          "texte": "Le temple offre un cadre paisible, idéal pour la méditation ou simplement pour profiter du calme."
+        }
+      ]
+    },
+    {
+      "jour": 9,
+      "symbole": "🎁",
+      "titre": "Derniers instants et souvenirs",
+      "legende": "Profitez de cette dernière journée complète sur l'île pour faire vos derniers achats de souvenirs, revisiter un lieu coup de cœur ou simplement vous imprégner une dernière fois de l'atmosphère unique de Con Dao. C'est le moment idéal pour savourer un dernier repas de fruits de mer frais et préparer votre départ.",
+      "lieu": "Con Dao",
+      "activites": [
+        "🛍️ <strong>Achats de souvenirs et artisanat local</strong>: Parcourez les petites boutiques de Con Son pour trouver des souvenirs uniques, comme des produits à base de perles ou de coquillages.",
+        "🍽️ <strong>Dîner d'adieu aux saveurs marines</strong>: Offrez-vous un dernier festin de fruits de mer frais dans l'un des restaurants locaux, une expérience culinaire incontournable."
+      ],
+      "illustration": "jour9.jpg",
+      "encarts": [
+        {
+          "symbole": "🦐",
+          "titre": "Spécialités",
+          "texte": "Ne quittez pas Con Dao sans avoir goûté aux crevettes tigrées grillées ou au 'Goi Ca Nhám' (salade de requin)."
+        },
+        {
+          "symbole": "💰",
+          "titre": "Négociation",
+          "texte": "Au marché, la négociation est courante et fait partie de l'expérience, mais toujours avec le sourire."
+        }
+      ]
+    },
+    {
+      "jour": 10,
+      "symbole": "🛫",
+      "titre": "Retour vers Ho Chi Minh Ville",
+      "legende": "Il est temps de quitter les plages idylliques de Con Dao. Un court vol vous ramènera à Ho Chi Minh Ville. Selon l'heure de votre vol international, vous pourrez soit profiter d'une dernière soirée dans la métropole vietnamienne, soit vous préparer directement pour votre vol de retour.",
+      "lieu": "Con Dao - Ho Chi Minh Ville",
+      "activites": [
+        "✈️ <strong>Vol Con Dao - Ho Chi Minh Ville</strong>: Prenez votre vol retour vers Ho Chi Minh Ville, marquant la fin de votre séjour insulaire.",
+        "🌃 <strong>Soirée libre à Ho Chi Minh Ville</strong>: Si le temps le permet, explorez le quartier animé de Pham Ngu Lao ou savourez un dernier repas vietnamien."
+      ],
+      "illustration": "jour10.jpg",
+      "encarts": [
+        {
+          "symbole": "🏨",
+          "titre": "Hébergement",
+          "texte": "Si votre vol international est le lendemain, réservez un hôtel près de l'aéroport de Tan Son Nhat (SGN) pour plus de commodité."
+        },
+        {
+          "symbole": "🚕",
+          "titre": "Transports",
+          "texte": "Utilisez des applications comme Grab (équivalent d'Uber) pour des taxis fiables et à prix fixe à Ho Chi Minh Ville."
+        }
+      ]
+    },
+    {
+      "jour": 11,
+      "symbole": "🌍",
+      "titre": "Vol retour vers Paris",
+      "legende": "Après un voyage riche en découvertes et en émotions, il est temps de prendre votre vol de retour vers Paris. Ce sera une longue journée de voyage, l'occasion de repenser à tous les moments magiques vécus à Con Dao et de commencer à planifier votre prochaine aventure.",
+      "lieu": "Ho Chi Minh Ville - Paris",
+      "activites": [
+        "✈️ <strong>Vol Ho Chi Minh Ville - Paris</strong>: Embarquez pour votre vol long-courrier de retour vers la France, emportant avec vous des souvenirs inoubliables."
+      ],
+      "illustration": "jour11.jpg",
+      "encarts": [
+        {
+          "symbole": "😴",
+          "titre": "Repos",
+          "texte": "Prévoyez de quoi vous divertir et vous reposer pendant le vol, comme des films, de la musique ou un bon livre."
+        }
+      ]
+    },
+    {
+      "jour": 12,
+      "symbole": "👋",
+      "titre": "Arrivée à Paris",
+      "legende": "Votre voyage touche à sa fin avec votre arrivée à l'aéroport de Paris. La tête remplie d'images paradisiaques et le cœur léger, vous retrouverez le sol français, prêt à partager vos récits de l'archipel secret de Con Dao. Bienvenue chez vous, avec des souvenirs pour la vie.",
+      "lieu": "Paris",
+      "activites": [
+        "🛬 <strong>Arrivée à Paris</strong>: Atterrissage à Paris, marquant la fin de votre magnifique périple vietnamien."
+      ],
+      "illustration": "jour12.jpg",
+      "encarts": [
+        {
+          "symbole": "🏠",
+          "titre": "Retour à la maison",
+          "texte": "Pensez à organiser votre transport depuis l'aéroport de Paris pour un retour en douceur."
+        }
+      ]
+    }
+  ],
+  "periodes_ideales": [
+    {
+      "titre": "Les périodes idéales pour ce séjour sont les mois de décembre à mai.",
+      "symbole": "☀️"
+    }
+  ],
+  "infos_pratiques": [
+    {
+      "titre": "Un visa est nécessaire pour les citoyens français se rendant au Vietnam. Il peut être obtenu en ligne (e-visa) ou à l'ambassade.",
+      "symbole": "🛂"
+    },
+    {
+      "titre": "La monnaie est le Dong Vietnamien (VND). Les cartes de crédit sont acceptées dans les grands hôtels et restaurants, mais prévoyez du liquide pour les petits commerces et marchés.",
+      "symbole": "💳"
+    },
+    {
+      "titre": "Le climat est tropical. Prévoyez des vêtements légers en coton, un chapeau, des lunettes de soleil et de la crème solaire. Un imperméable léger peut être utile en saison des pluies.",
+      "symbole": "👕"
+    },
+    {
+      "titre": "La langue officielle est le vietnamien. L'anglais est parlé dans les zones touristiques, mais quelques mots de vietnamien seront appréciés.",
+      "symbole": "🗣️"
+    }
+  ],
+  "liens_utiles": [
+    {
+      "legende": "Informations officielles sur le tourisme au Vietnam",
+      "titre": "Vietnam National Administration of Tourism",
+      "url": "https://vietnam.travel/",
+      "symbole": "📘"
+    },
+    {
+      "legende": "Demande de visa électronique pour le Vietnam",
+      "titre": "Portail national de l'immigration du Vietnam",
+      "url": "https://evisa.xuatnhapcanh.gov.vn/",
+      "symbole": "📄"
+    },
+    {
+      "legende": "Prévisions météo détaillées pour Con Dao",
+      "titre": "Météo Con Dao",
+      "url": "https://www.accuweather.com/fr/vn/con-dao/353457/weather-forecast/353457",
+      "symbole": "🌤️"
+    }
+  ]
+}
