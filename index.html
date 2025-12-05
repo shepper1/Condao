@@ -1,0 +1,626 @@
+
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Con Dao: Évasion Insulaire et Mémoire Historique </title>
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        template: {
+                            sable: '#F3E5AB',
+                            ocre: '#C66B3D',
+                            roche: '#2D2A26',
+                            ciel: '#4A6C6F',
+                            bg: '#FAFAF9'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { overflow-x: hidden; }
+        
+        /* Ligne verticale de la timeline */
+        .timeline-line {
+            position: absolute;
+            left: 24px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background-color: #E5E7EB;
+            z-index: 0;
+        }
+        @media (min-width: 768px) {
+            .timeline-line { left: 50%; margin-left: -1px; }
+        }
+
+        /* Style des cartes Info */
+        .tip-card {
+            border-left: 4px solid #C66B3D;
+            background-color: #FFF7ED;
+        }
+
+        /* Masquer la scrollbar de la nav mobile tout en gardant le scroll */
+        .hide-scroll::-webkit-scrollbar { display: none; }
+        .hide-scroll { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-template-bg text-template-roche antialiased">
+
+    <nav id="nav-desktop" class="hidden md:flex fixed top-0 w-full z-50 bg-white/90 backdrop-blur border-b border-gray-200 py-4 px-8 justify-between items-center shadow-sm transition-transform duration-300 -translate-y-full">
+        <a href="#top" class="text-xl font-serif font-bold tracking-widest text-template-roche">Con Dao: Évasion Insulaire et Mémoire Historique</a>
+        <div class="space-x-6 text-sm font-bold text-gray-600">
+            <a href="#jour-1" class="nav-item-desktop hover:text-template-ocre transition">Le Parcours</a>
+            <a href="#pratique" class="nav-item-desktop hover:text-template-ocre transition">Infos Pratiques</a>
+        </div>
+    </nav>
+
+    <nav id="nav-mobile" class="md:hidden fixed top-0 w-full z-50 bg-white/95 backdrop-blur border-b border-gray-200 py-3 pl-4 overflow-x-auto hide-scroll whitespace-nowrap shadow-md transition-transform duration-300 -translate-y-full">
+        <div class="flex space-x-2 pr-4" id="mobile-menu-container">
+            <a href="#top" class="inline-block px-3 py-1 bg-template-roche text-white rounded-full text-xs font-bold shadow-sm">Top</a>
+            
+                <a href="#jour-1" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J1 Départ de Paris et Voyage vers l'Asie</a>
+            
+                <a href="#jour-2" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J2 Arrivée à Con Dao et Premières Impressions</a>
+            
+                <a href="#jour-3" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J3 Plages Secrètes et Douceur de Vivre</a>
+            
+                <a href="#jour-4" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J4 Plongée dans l'Histoire de Con Dao</a>
+            
+                <a href="#jour-5" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J5 Exploration du Monde Sous-Marin</a>
+            
+                <a href="#jour-6" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J6 Randonnée et Nature au Parc National</a>
+            
+                <a href="#jour-7" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J7 Découverte de l'Île à Vélo et Saveurs Locales</a>
+            
+                <a href="#jour-8" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J8 Journée Libre et Détente Finale</a>
+            
+                <a href="#jour-9" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J9 Retour vers le Continent et Nuit à Ho Chi Minh Ville</a>
+            
+                <a href="#jour-10" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J10 Vol de Retour vers Paris</a>
+            
+            <a href="#pratique" class="mobile-link inline-block px-3 py-1 border border-gray-300 text-gray-500 rounded-full text-xs font-bold">Infos</a>
+        </div>
+    </nav>
+
+    <header id="top" class="relative h-[85vh] flex items-center justify-center overflow-hidden pt-12 md:pt-0">
+        
+        <div class="absolute inset-0 bg-black/50 z-10"></div>
+
+        <video autoplay muted loop playsinline 
+               poster="https://images.unsplash.com/photo-1579606946838-6db34433f3c0?q=80&w=2070"
+               class="absolute inset-0 w-full h-full object-cover">
+            <source src="https://videos.pexels.com/video-files/4456988/4456988-hd_1920_1080_25fps.mp4" type="video/mp4">
+            Votre navigateur ne supporte pas la vidéo.
+        </video>
+        
+        <div class="relative z-20 text-center text-white px-4 max-w-3xl animate-fade-in-up">
+            <p class="font-sans text-template-sable tracking-[0.3em] mb-4 uppercase text-sm font-semibold">Feuille de Route</p>
+            <h1 class="font-Playfair italic text-5xl md:text-8xl mb-6 leading-tight drop-shadow-lg">Condao</h1>
+            <p class="font-sans text-lg md:text-xl text-gray-100 mb-10 font-light max-w-2xl mx-auto leading-relaxed">Con Dao: Évasion Insulaire et Mémoire Historique</p>
+            
+            <div class="flex flex-wrap justify-center gap-4 text-sm font-bold mb-10">
+                <span class="bg-white/10 backdrop-blur-md px-5 py-2 rounded-full border border-white/20 shadow-sm">🗓️ 10 jours uniquement</span>
+                <span class="bg-white/10 backdrop-blur-md px-5 py-2 rounded-full border border-white/20 shadow-sm">💰 2500-3000€/pers / pers</span>
+                <span class="bg-white/10 backdrop-blur-md px-5 py-2 rounded-full border border-white/20 shadow-sm">🛬 Environ 15-20h avec escales depuis Paris</span>
+            </div>
+
+        </div>
+    </header>
+
+    <section id="itineraire" class="max-w-6xl mx-auto px-4 py-20 relative">
+        
+        <div class="text-center mb-16">
+            <span class="text-template-ocre font-bold tracking-widest text-xs uppercase">Le Roadtrip</span>
+            <h2 class="font-serif text-4xl mt-2 text-template-roche">Votre Programme</h2>
+        </div>
+
+        <div class="relative">
+            <div class="timeline-line"></div>
+            
+            
+                <div id="jour-1" class="section-etape relative z-10 mb-20 md:flex md:flex-row-reverse md:justify-between items-start group scroll-mt-32">
+                    
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-roche rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-left md:pl-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2">Jour 1</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Départ de Paris et Voyage vers l'Asie</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">Embarquez pour une aventure lointaine, laissant derrière vous le tumulte parisien. Ce premier jour est dédié au voyage, une transition douce vers les paysages et la culture vietnamienne. Préparez-vous à l'émerveillement qui vous attend.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left">
+                            
+                                <li>✈️ <strong>Vol Paris - Ho Chi Minh Ville</strong>: Débutez votre périple avec un vol long-courrier, profitant des services à bord pour vous détendre et vous immerger dans l'ambiance du voyage.</li>
+                            
+                                <li>😴 <strong>Nuit en vol</strong>: Reposez-vous pendant la nuit pour arriver frais et dispos, prêt à découvrir les trésors cachés de Con Dao.</li>
+                            
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pr-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/shepper1/Condao/main/jour1.jpg" class="w-full h-64 object-cover" alt="Jour 1">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">💡 Astuce</p>
+                                <p class="text-gray-700">Prévoyez un oreiller de voyage et des bouchons d'oreille pour optimiser votre confort durant le vol.</p>
+                            </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🛂 Formalités</p>
+                                <p class="text-gray-700">Vérifiez les exigences de visa pour le Vietnam bien avant votre départ.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+                <div id="jour-2" class="section-etape relative z-10 mb-20 md:flex  md:justify-between items-start group scroll-mt-32">
+                    
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-ocre rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-right md:pr-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2">Jour 2</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Arrivée à Con Dao et Premières Impressions</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">Après un vol intérieur pittoresque, vous atterrissez sur l'île de Con Dao. L'air marin et la végétation luxuriante vous accueillent. Prenez le temps de vous installer et de vous imprégner de l'atmosphère paisible de cette île paradisiaque, loin de l'agitation urbaine.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left">
+                            
+                                <li>🛬 <strong>Vol Ho Chi Minh Ville - Con Dao</strong>: Profitez de ce court vol pour admirer les paysages côtiers vietnamiens avant d'atterrir sur la piste unique de Con Dao.</li>
+                            
+                                <li>🛏️ <strong>Installation à l'hôtel et détente</strong>: Après le transfert, installez-vous dans votre hébergement et prenez un moment pour vous rafraîchir et vous reposer.</li>
+                            
+                                <li>🚶‍♀️ <strong>Balade légère sur la plage d'An Hai</strong>: Terminez la journée par une promenade relaxante le long de la plage d'An Hai, observant le coucher de soleil sur la mer de Chine méridionale.</li>
+                            
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pl-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/shepper1/Condao/main/jour2.jpg" class="w-full h-64 object-cover" alt="Jour 2">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🛵 Transport sur l'île</p>
+                                <p class="text-gray-700">La location d'un scooter est le moyen le plus pratique pour explorer l'île à votre rythme. Le réseau routier est simple et peu fréquenté.</p>
+                            </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">📶 Connectivité</p>
+                                <p class="text-gray-700">Achetez une carte SIM locale à l'aéroport de HCMC pour rester connecté, la couverture 4G est bonne sur l'île.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+                <div id="jour-3" class="section-etape relative z-10 mb-20 md:flex md:flex-row-reverse md:justify-between items-start group scroll-mt-32">
+                    
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-ciel rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-left md:pl-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2">Jour 3</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Plages Secrètes et Douceur de Vivre</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">Aujourd'hui, l'île vous invite à la paresse et à la découverte de ses trésors côtiers. Laissez-vous bercer par le clapotis des vagues sur des plages immaculées, loin des foules. C'est le moment idéal pour se ressourcer et profiter de la beauté naturelle de Con Dao.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left">
+                            
+                                <li>🏖️ <strong>Détente à la plage de Dam Trau</strong>: Réputée comme l'une des plus belles plages de l'île, Dam Trau offre un sable fin et des eaux cristallines, parfaites pour la baignade et le farniente.</li>
+                            
+                                <li>🍜 <strong>Déjeuner de fruits de mer frais</strong>: Savourez un déjeuner typique dans un restaurant local en bord de mer, dégustant les prises du jour pour une expérience culinaire authentique.</li>
+                            
+                                <li>🌅 <strong>Coucher de soleil au port de Ben Dam</strong>: Rendez-vous au port pour admirer le spectacle coloré du soleil plongeant dans la mer, avec les bateaux de pêche rentrant au port.</li>
+                            
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pr-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/shepper1/Condao/main/jour3.jpg" class="w-full h-64 object-cover" alt="Jour 3">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">☀️ Protection solaire</p>
+                                <p class="text-gray-700">Le soleil est intense à Con Dao. N'oubliez pas crème solaire, chapeau et lunettes de soleil.</p>
+                            </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🍽️ Gastronomie</p>
+                                <p class="text-gray-700">Ne manquez pas de goûter les fruits de mer grillés, une spécialité de l'île.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+                <div id="jour-4" class="section-etape relative z-10 mb-20 md:flex  md:justify-between items-start group scroll-mt-32">
+                    
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-roche rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-right md:pr-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2">Jour 4</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Plongée dans l'Histoire de Con Dao</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">Con Dao, au-delà de ses paysages idylliques, porte une histoire poignante. Cette journée est consacrée à la découverte des sites historiques qui témoignent du passé colonial et de la période de la guerre du Vietnam. Une immersion nécessaire pour comprendre l'âme de l'île.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left">
+                            
+                                <li>⛓️ <strong>Visite de la prison de Con Dao</strong>: Explorez les vestiges de cette prison tristement célèbre, un lieu chargé d'émotion qui raconte l'histoire des prisonniers politiques et des 'Tiger Cages'.</li>
+                            
+                                <li>🕯️ <strong>Mémorial de Hang Duong et Cimetière</strong>: Recueillez-vous au cimetière de Hang Duong, où reposent des milliers de prisonniers, dont la célèbre héroïne Vo Thi Sau.</li>
+                            
+                                <li>🏛️ <strong>Musée de Con Dao</strong>: Complétez votre compréhension de l'histoire de l'île à travers les expositions et les artefacts présentés au musée local.</li>
+                            
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pl-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/shepper1/Condao/main/jour4.jpg" class="w-full h-64 object-cover" alt="Jour 4">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1"> respectful Respect</p>
+                                <p class="text-gray-700">Adoptez une tenue respectueuse lors de la visite des sites historiques et du cimetière.</p>
+                            </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🗣️ Guide</p>
+                                <p class="text-gray-700">Un guide local peut enrichir considérablement votre visite des prisons avec des récits et des anecdotes.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+                <div id="jour-5" class="section-etape relative z-10 mb-20 md:flex md:flex-row-reverse md:justify-between items-start group scroll-mt-32">
+                    
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-ocre rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-left md:pl-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2">Jour 5</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Exploration du Monde Sous-Marin</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">Le Parc National Marin de Con Dao est un sanctuaire de biodiversité. Aujourd'hui, vous plongez dans ses eaux cristallines pour découvrir des récifs coralliens vibrants et une vie marine foisonnante. Une expérience inoubliable pour les amoureux de la nature et de la mer.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left">
+                            
+                                <li>🚤 <strong>Excursion snorkeling ou plongée sous-marine</strong>: Partez en bateau vers les îles environnantes comme Hon Bay Canh ou Hon Tai pour explorer les fonds marins riches en coraux et poissons tropicaux.</li>
+                            
+                                <li>🐢 <strong>Observation de tortues (selon saison)</strong>: Si la saison le permet (mai à octobre), vous pourriez avoir la chance d'observer des tortues marines, notamment sur l'île de Hon Bay Canh.</li>
+                            
+                                <li>🏝️ <strong>Pique-nique sur une île déserte</strong>: Profitez d'un déjeuner sur une plage isolée, savourant la tranquillité et la beauté sauvage des petites îles de l'archipel.</li>
+                            
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pr-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/shepper1/Condao/main/jour5.jpg" class="w-full h-64 object-cover" alt="Jour 5">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🐠 Meilleure période</p>
+                                <p class="text-gray-700">La meilleure période pour la plongée et le snorkeling est de mars à juillet, lorsque la mer est calme et la visibilité optimale.</p>
+                            </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">⚠️ Écologie</p>
+                                <p class="text-gray-700">Respectez l'environnement marin : ne touchez pas les coraux et ne laissez aucun déchet.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+                <div id="jour-6" class="section-etape relative z-10 mb-20 md:flex  md:justify-between items-start group scroll-mt-32">
+                    
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-ciel rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-right md:pr-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2">Jour 6</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Randonnée et Nature au Parc National</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">L'intérieur de Con Dao est dominé par un parc national luxuriant, abritant une faune et une flore uniques. Cette journée est dédiée à l'exploration de ses sentiers, offrant des vues panoramiques et une immersion totale dans la nature tropicale de l'île. Une bouffée d'air frais et d'aventure.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left">
+                            
+                                <li>🚶‍♂️ <strong>Randonnée dans le Parc National de Con Dao</strong>: Empruntez les sentiers balisés pour découvrir la forêt primaire, ses arbres centenaires et ses cascades cachées.</li>
+                            
+                                <li>🐒 <strong>Observation de la faune locale</strong>: Soyez attentif, vous pourriez apercevoir des écureuils, des macaques et une multitude d'oiseaux endémiques.</li>
+                            
+                                <li> viewpoint <strong>Vue panoramique depuis le phare de Mui Tau Be</strong>: Terminez la randonnée par un panorama époustouflant sur la côte et l'océan, un spectacle mémorable.</li>
+                            
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pl-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/shepper1/Condao/main/jour6.jpg" class="w-full h-64 object-cover" alt="Jour 6">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">👟 Équipement</p>
+                                <p class="text-gray-700">Portez de bonnes chaussures de marche, un anti-moustique et emportez suffisamment d'eau.</p>
+                            </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🗺️ Permis</p>
+                                <p class="text-gray-700">Certains sentiers nécessitent un permis ou un guide, renseignez-vous auprès de votre hôtel ou du centre du parc.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+                <div id="jour-7" class="section-etape relative z-10 mb-20 md:flex md:flex-row-reverse md:justify-between items-start group scroll-mt-32">
+                    
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-roche rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-left md:pl-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2">Jour 7</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Découverte de l'Île à Vélo et Saveurs Locales</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">Après les aventures des jours précédents, cette journée propose une exploration plus douce de l'île. Louez un vélo pour parcourir les routes côtières, découvrez des villages de pêcheurs et goûtez aux spécialités culinaires. Une journée pour s'imprégner du rythme de vie local.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left">
+                            
+                                <li>🚴‍♀️ <strong>Tour de l'île à vélo ou scooter</strong>: Parcourez les routes sinueuses, longeant la côte et traversant de petits villages, pour une perspective différente de Con Dao.</li>
+                            
+                                <li>⛩️ <strong>Visite du temple Van Son Pagoda</strong>: Montez les marches jusqu'à ce temple paisible offrant une vue magnifique sur la ville de Con Son et la mer.</li>
+                            
+                                <li>🍲 <strong>Dîner au marché nocturne de Con Son</strong>: Plongez dans l'ambiance animée du marché, dégustant des plats locaux et des fruits de mer frais à des prix abordables.</li>
+                            
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pr-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/shepper1/Condao/main/jour7.jpg" class="w-full h-64 object-cover" alt="Jour 7">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🌶️ Cuisine</p>
+                                <p class="text-gray-700">N'hésitez pas à goûter le 'Bún riêu cua', une soupe de nouilles de crabe, spécialité de la région.</p>
+                            </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1"> bargaining Marchandage</p>
+                                <p class="text-gray-700">Au marché, le marchandage est courant et fait partie de l'expérience, toujours avec le sourire.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+                <div id="jour-8" class="section-etape relative z-10 mb-20 md:flex  md:justify-between items-start group scroll-mt-32">
+                    
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-ocre rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-right md:pr-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2">Jour 8</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Journée Libre et Détente Finale</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">Profitez de cette dernière journée complète sur Con Dao pour faire ce qui vous plaît. Que ce soit une dernière baignade, l'achat de souvenirs, un massage relaxant ou simplement se prélasser au bord de la piscine, c'est le moment de savourer les derniers instants de votre séjour insulaire.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left">
+                            
+                                <li>💆‍♀️ <strong>Massage vietnamien ou spa</strong>: Offrez-vous un moment de relaxation profonde avec un massage traditionnel vietnamien pour dénouer les tensions.</li>
+                            
+                                <li>🛍️ <strong>Achat de souvenirs locaux</strong>: Flânez dans les petites boutiques pour trouver des produits artisanaux, des perles ou des spécialités locales à rapporter.</li>
+                            
+                                <li>🍹 <strong>Dernier cocktail au coucher du soleil</strong>: Savourez un dernier verre en admirant le soleil se coucher sur l'océan, un moment parfait pour se remémorer les bons souvenirs.</li>
+                            
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pl-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/shepper1/Condao/main/jour8.jpg" class="w-full h-64 object-cover" alt="Jour 8">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🎁 Souvenirs</p>
+                                <p class="text-gray-700">Les perles de Con Dao sont réputées, mais vérifiez l'authenticité avant d'acheter.</p>
+                            </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">💸 Monnaie</p>
+                                <p class="text-gray-700">La monnaie locale est le Dong vietnamien (VND). Les cartes de crédit sont acceptées dans les grands hôtels, mais prévoyez du liquide pour les petits commerces.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+                <div id="jour-9" class="section-etape relative z-10 mb-20 md:flex md:flex-row-reverse md:justify-between items-start group scroll-mt-32">
+                    
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-ciel rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-left md:pl-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2">Jour 9</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Retour vers le Continent et Nuit à Ho Chi Minh Ville</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">Il est temps de quitter les charmes de Con Dao. Un vol intérieur vous ramène à Ho Chi Minh Ville, la vibrante métropole du sud du Vietnam. Profitez de cette escale pour une dernière immersion dans l'ambiance vietnamienne avant le long vol de retour.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left">
+                            
+                                <li>🛫 <strong>Vol Con Dao - Ho Chi Minh Ville</strong>: Prenez un vol matinal ou en début d'après-midi pour rejoindre le continent vietnamien.</li>
+                            
+                                <li>🏨 <strong>Installation à l'hôtel près de l'aéroport</strong>: Choisissez un hôtel proche de l'aéroport de Tan Son Nhat (SGN) pour faciliter votre départ le lendemain.</li>
+                            
+                                <li>🍲 <strong>Dîner d'adieu à Ho Chi Minh Ville</strong>: Profitez de votre dernière soirée pour déguster un plat typique vietnamien dans un restaurant local.</li>
+                            
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pr-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/shepper1/Condao/main/jour9.jpg" class="w-full h-64 object-cover" alt="Jour 9">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">⏱️ Timing</p>
+                                <p class="text-gray-700">Prévoyez suffisamment de temps pour le transfert entre l'aéroport domestique et international si vous avez un vol de correspondance serré.</p>
+                            </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🚕 Taxi</p>
+                                <p class="text-gray-700">Utilisez les applications de VTC comme Grab ou des taxis officiels (Vinasun, Mai Linh) pour vos déplacements en ville.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+                <div id="jour-10" class="section-etape relative z-10 mb-20 md:flex  md:justify-between items-start group scroll-mt-32">
+                    
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-roche rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-right md:pr-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2">Jour 10</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Vol de Retour vers Paris</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">Votre incroyable voyage touche à sa fin. Après un petit-déjeuner vietnamien, vous vous dirigez vers l'aéroport pour votre vol retour. Emportez avec vous des souvenirs inoubliables de Con Dao, ses paysages, son histoire et la gentillesse de ses habitants.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left">
+                            
+                                <li>✈️ <strong>Vol Ho Chi Minh Ville - Paris</strong>: Embarquez pour votre vol long-courrier de retour, le cœur rempli d'expériences mémorables.</li>
+                            
+                                <li>💭 <strong>Rêveries en vol</strong>: Revivez les moments forts de votre séjour, des plages paradisiaques aux récits historiques poignants.</li>
+                            
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pl-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/shepper1/Condao/main/jour10.jpg" class="w-full h-64 object-cover" alt="Jour 10">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🛍️ Derniers achats</p>
+                                <p class="text-gray-700">L'aéroport de HCMC propose quelques boutiques pour des achats de dernière minute.</p>
+                            </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🛂 Douanes</p>
+                                <p class="text-gray-700">Préparez vos documents pour les formalités douanières à l'arrivée à Paris.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+            </div>
+    </section>
+
+    <footer id="pratique" class="bg-white border-t border-gray-200 pt-16 pb-10 scroll-mt-24">
+        <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-10 mb-12">
+            <div>
+                <h4 class="font-serif text-xl mb-4 text-template-roche flex items-center gap-2">
+                    <span>💴</span> Budget
+                </h4>
+                
+                    <p class="text-sm text-gray-600 leading-relaxed">Budget vol: 1000-1200€/pers</p>
+                
+                    <p class="text-sm text-gray-600 leading-relaxed">Budget transports: 150-200€/pers</p>
+                
+                    <p class="text-sm text-gray-600 leading-relaxed">Budget repas: 400-500€/pers</p>
+                
+                    <p class="text-sm text-gray-600 leading-relaxed">Budget logement: 700-800€/pers</p>
+                
+                    <p class="text-sm text-gray-600 leading-relaxed">Budget activités: 250-300€/pers</p>
+                
+            </div>
+            <div>
+                <h4 class="font-serif text-xl mb-4 text-template-roche flex items-center gap-2">
+                    <span>☀️</span> Périodes Idéales
+                </h4>
+                
+                    <p class="text-sm text-gray-600 leading-relaxed">Les périodes idéales pour ce séjour sont les mois de novembre à mai, avec un temps sec et ensoleillé.</p>
+                
+                    <p class="text-sm text-gray-600 leading-relaxed">La saison des pluies (juin à octobre) peut apporter des averses, mais le soleil reste présent.</p>
+                
+            </div>
+            <div>
+                <h4 class="font-serif text-xl mb-4 text-template-roche flex items-center gap-2">
+                    <span>🧳</span> À savoir
+                </h4>
+                <ul class="text-sm text-gray-600 space-y-3">
+
+                        <li><strong>🛂 :</strong> Le Vietnam exige un visa pour les citoyens français. Il est recommandé de l'obtenir avant le départ (e-visa ou à l'ambassade).</li>
+                    
+                        <li><strong>💸 :</strong> La monnaie est le Dong Vietnamien (VND). Les distributeurs sont disponibles, mais prévoyez du liquide pour les petits commerces.</li>
+                    
+                        <li><strong>🗣️ :</strong> Le vietnamien est la langue officielle. L'anglais est parlé dans les zones touristiques, mais quelques mots de vietnamien seront appréciés.</li>
+                    
+                        <li><strong>🌡️ :</strong> Les températures à Con Dao sont tropicales toute l'année (25-30°C). Prévoyez des vêtements légers, un maillot de bain et un chapeau.</li>
+                    
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-serif text-xl mb-4 text-template-roche flex items-center gap-2"><span>🔗</span> Liens Utiles</h4>
+                <ul class="text-sm space-y-3">
+                  <li><a href="https://shepper1.github.io/Condao/map.html" target="_blank" class="hover:underline flex items-center gap-2"><strong>🗺️ Carte</strong></a></li>
+                    
+                        <li><a href="https://vietnam.travel/" target="_blank" class="hover:underline flex items-center gap-2"><strong>📘 Vietnam National Administration of Tourism</strong></a></li>
+                    
+                        <li><a href="https://www.accuweather.com/fr/vn/con-dao/354011/weather-forecast/354011" target="_blank" class="hover:underline flex items-center gap-2"><strong>🌤️ AccuWeather Con Dao</strong></a></li>
+                    
+                        <li><a href="https://www.condaonationalpark.org/" target="_blank" class="hover:underline flex items-center gap-2"><strong>🌳 Con Dao National Park (site non officiel)</strong></a></li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="text-center border-t border-gray-100 pt-8">
+            <p class="font-serif text-2xl text-template-roche mb-2">Condao</p>
+            <p class="text-xs text-gray-400">© 2025 - Roadmap</p>
+        </div>
+    </footer>
+
+    <script>
+        // 1. Gestion de l'affichage du menu au scroll
+        const navDesktop = document.getElementById('nav-desktop');
+        const navMobile = document.getElementById('nav-mobile');
+        
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 300) {
+                navDesktop.classList.remove('-translate-y-full');
+                navMobile.classList.remove('-translate-y-full');
+            } else {
+                navDesktop.classList.add('-translate-y-full');
+                navMobile.classList.add('-translate-y-full');
+            }
+        });
+
+        // 2. Détection de l'étape active
+        const observerOptions = {
+            root: null,
+            rootMargin: '-40% 0px -60% 0px',
+            threshold: 0
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const activeId = entry.target.id;
+                    
+                    document.querySelectorAll('.mobile-link').forEach(link => {
+                        const linkHref = link.getAttribute('href').substring(1);
+                        if (linkHref === activeId) {
+                            link.classList.remove('bg-gray-100', 'text-gray-700');
+                            link.classList.add('bg-template-ocre', 'text-white', 'shadow-md');
+                            link.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+                        } else {
+                            link.classList.add('bg-gray-100', 'text-gray-700');
+                            link.classList.remove('bg-template-ocre', 'text-white', 'shadow-md');
+                        }
+                    });
+
+                    document.querySelectorAll('.nav-item-desktop').forEach(link => {
+                        const linkHref = link.getAttribute('href').substring(1);
+                        if (activeId.includes('jour') && linkHref === 'jour-1') {
+                            link.classList.add('text-template-ocre');
+                        } else if (activeId === 'pratique' && linkHref === 'pratique') {
+                            link.classList.add('text-template-ocre');
+                        } else {
+                            link.classList.remove('text-template-ocre');
+                        }
+                    });
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('div[id^="jour-"], footer#pratique').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
